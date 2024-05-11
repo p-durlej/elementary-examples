@@ -1,0 +1,2 @@
+To jest plik tekstowy!
+Hello, world!
