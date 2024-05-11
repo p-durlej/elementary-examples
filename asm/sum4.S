@@ -1,4 +1,4 @@
-/* Copyright (c) 2017, Piotr Durlej
+/* Copyright (c) Piotr Durlej
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
