@@ -29,13 +29,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int main(void)
+static int status = EXIT_SUCCESS;
+
+void readfile(const char *pathname)
 {
   ssize_t read_cnt, write_cnt;
   char buf[4096];
   int fd;
 
-  fd = open("hello.txt", O_RDONLY);
+  fd = open(pathname, O_RDONLY);
   if (fd == -1) {
     goto input_fail;
   }
@@ -57,8 +59,18 @@ int main(void)
     errx(EXIT_FAILURE, "stdout: short write");
   }
 
-  return EXIT_SUCCESS;
+  return;
 
 input_fail:
-  err(EXIT_FAILURE, "hello.txt");
+  status = EXIT_FAILURE;
+  warn("%s", pathname);
+}
+
+int main(int argc, char **argv)
+{
+  int i;
+
+  for (i = 1; i < argc; i++)
+    readfile(argv[i]);
+  return status;
 }
