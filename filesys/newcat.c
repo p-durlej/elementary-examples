@@ -60,5 +60,5 @@ int main(void)
   return EXIT_SUCCESS;
 
 input_fail:
-  err(EXIT_FAILURE, "newcat.txt");
+  err(EXIT_FAILURE, "hello.txt");
 }
