@@ -27,6 +27,6 @@
 	.globl	sum
 
 sum:
-	mov	%rdi, %rax 
+	mov	%rdi, %rax
 	add	%rsi, %rax
 	ret
