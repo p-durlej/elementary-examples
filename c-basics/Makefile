@@ -24,21 +24,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 
-all:
-	(cd asm		&& $(MAKE))
-	(cd c-basics	&& $(MAKE))
-	(cd c-debugging	&& $(MAKE))
-	(cd c-old	&& $(MAKE))
-	(cd filesys	&& $(MAKE))
-	(cd sys		&& $(MAKE))
+all: hello
 
 clean:
-	(cd asm		&& $(MAKE) clean)
-	(cd c-basics	&& $(MAKE) clean)
-	(cd c-debugging	&& $(MAKE) clean)
-	(cd c-old	&& $(MAKE) clean)
-	(cd filesys	&& $(MAKE) clean)
-	(cd sys		&& $(MAKE) clean)
-
-reformat:
-	clang-format -i */*.c */*.h
+	-rm -f hello
