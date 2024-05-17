@@ -1,5 +1,6 @@
 /crash1
 /crash2
 /default-int
+/memleak
 /*.dSYM
 /*.core

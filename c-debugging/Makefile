@@ -24,7 +24,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 
-BIN = crash1 crash2
+BIN = crash1 crash2 memleak
 
 CFLAGS = -g
 
