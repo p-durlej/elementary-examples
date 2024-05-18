@@ -25,12 +25,14 @@
  */
 
 #include <stdio.h>
+#include <err.h>
 
 static void do_smth(int i)
 {
 	char *s;
 
-	asprintf(&s, "Number %i", i);
+	if (asprintf(&s, "Number %i", i) == -1)
+		err(1, "asprintf");
 	printf("%s\n", s);
 }
 
