@@ -24,23 +24,24 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdio.h>
 #include <err.h>
+#include <stdio.h>
 
 static void do_smth(int i)
 {
-	char *s;
+  char *s;
 
-	if (asprintf(&s, "Number %i", i) == -1)
-		err(1, "asprintf");
-	printf("%s\n", s);
+  if (asprintf(&s, "Number %i", i) == -1) {
+    err(1, "asprintf");
+  }
+  printf("%s\n", s);
 }
 
 int main()
 {
-	int i;
+  int i;
 
-	for (i = 0; i < 3; i++)
-		do_smth(i);
-	return 0;
+  for (i = 0; i < 3; i++)
+    do_smth(i);
+  return 0;
 }
